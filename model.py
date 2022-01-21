@@ -251,7 +251,7 @@ class Model(DartsModel):
             state = value_vector(
                 Xm[i * self.physics.n_components:i * self.physics.n_components + self.physics.n_components])
             self.physics.results_itor.evaluate(state, values)
-            poro[i] = 1 - values[0]
+            poro[i] = 0.25 - values[0]
 
         poro_diff = poro - poro_init
 
